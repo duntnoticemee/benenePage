@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+.retro-card {
+  /* Positioning and Box Model */
+  position: fixed; 
+  width: 800px; /* Example width, adjust as needed */
+  max-width: 90vw; /* Responsive maximum width */
+  min-height: 400px; /* Example height, adjust as needed */
+  
+  /* Appearance */
+  background-color: white; /* Content background */
+  border-radius: 4px; /* Slightly rounded corners */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid #ccc; /* Light gray outer border */
+  
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  z-index: 1000; /* Ensure it floats above other elements */
+  user-select: none; /* Prevent text selection during drag */
+}
+/* --- Header Styling --- */
+.retro-card-header {
+  height: 40px; /* Fixed height for the header */
+  padding: 0 20px; /* Padding inside the header */
+  background-color: #332851; /* Dark gray background */
+  color: #9ae1e2; /* White text for the title */
+  font-family: helvetica; /* Clean font */
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  
+  /* Layout and Dragging */
+  display: flex;
+  align-items: center; /* Vertically center the title */
+  border-top-left-radius: 4px; /* Match parent's border-radius */
+  border-top-right-radius: 4px; /* Match parent's border-radius */
+  cursor: grab; /* Indicates this area is for dragging */
+}
+
+.retro-card-header:active {
+  cursor: grabbing; /* Cursor change when actively dragging */
+}
+
+.retro-card-title {
+  /* Simple title style */
+  text-transform: lowercase; /* Matches the 'home' title in the image */
+}
+
+/* --- Content Styling --- */
+.retro-card-content {
+  padding: 30px; /* Generous padding inside the content area */
+  
+  flex-grow: 1; /* Makes content area fill remaining space */
+  background-color: #9ae1e2; /* Very light, slightly off-white background */
+  /* Remove text-align: center; unless all future content needs it */
+  /* Remove flex properties if you don't want vertical centering for general content */
+  color: #332a51;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-size: 20px;
+}
+.retro-card-content {
+  padding: 30px; /* Generous padding inside the content area */
+ 
+  flex-grow: 1; /* Makes content area fill remaining space */
+  background-color: #9ae1e2; /* Very light, slightly off-white background */
+  /* Remove text-align: center; unless all future content needs it */
+  /* Remove flex properties if you don't want vertical centering for general content */
+  color: #332a51;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-size: 25px;
+}
+
+.retro-card-content pre {
+  /* padding: 30px; Generous padding inside the content area */
+  flex-grow: 1; /* Makes content area fill remaining space */
+  background-color: #9ae1e2; /* Very light, slightly off-white background */
+  /* Remove text-align: center; unless all future content needs it */
+  /* Remove flex properties if you don't want vertical centering for general content */
+  color: #332a51;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-size: 25px;
+  
+}
+
+.retro-card-content h1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 540;
+    font-optical-sizing: auto;
+    font-size: 80px;
+    letter-spacing: 2px;
+}
+
+.retro-card-header button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  top: 50%;
+  right: 1px;
+  margin-left: auto;
+  padding-right: 0%;
+  color: #9ae1e2;
+}
+
+.retro-card-content {
+  scrollbar-width: thin;
+  scrollbar-color: #bdeeeb transparent;
+  scroll-behavior: smooth;
+  flex-grow: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  
+}
+
+.retro-card-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.retro-card-content::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.grow-on-hover {
+  transition: transform 0.15s ease;
+  /* box-shadow 0.2s ease; */
+}
+
+.grow-on-hover:hover {
+  transform: scale(1.3);
+  /* box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2); */
+}
+
+.impact {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.align-justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.1s ease, visibility 0.4s ease; /* control fade speed */
+  background-color: #333;
+  color: #ca1515;
+  text-align: center;
+  border-radius: 6px;
+  padding: 4px 8px;
+  position: absolute;
+  z-index: 1;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.label-styling {
+  font-size: 19px;
+}
+
+.filter-drop-shadow:hover {
+  filter: drop-shadow(0 5px 10px rgba(6, 173, 234, 0.6));
+}
