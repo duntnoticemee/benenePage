@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import STAR_ICON_URL from './assets/icon_star.webp'
 import bluestar from './assets/bluestar.webp'
-import RetroCard from '../../confessPage/src/RetroCard';
+import RetroCard from './RetroCard';
 import ImageLinkIcon from './ImageLinkIcon';
 import ICON_DATA from './ICON_DATA';
 import thisMuch from './assets/this.gif'
