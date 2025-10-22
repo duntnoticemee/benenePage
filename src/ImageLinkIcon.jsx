@@ -1,9 +1,7 @@
 import STAR_ICON_URL from './assets/icon_star.webp'
 import useHoverSound from './useHoverSound';
 
-// -----------------------------------------------------------------------------
-// ImageLinkIcon
-// -----------------------------------------------------------------------------
+
 const ImageLinkIcon = ({ label, onClick }) => {
   const playonClick = useHoverSound('/open.wav', 0.6);
   return (
@@ -23,7 +21,7 @@ const ImageLinkIcon = ({ label, onClick }) => {
       // sound + click logic here
       onClick={(e) => {
         playonClick(); //  plays sound when clicked
-        if (onClick) onClick(e); // 🔗 still triggers your open-card logic
+        if (onClick) onClick(e); // still triggers your open-card logic
       }}
     >
       <img

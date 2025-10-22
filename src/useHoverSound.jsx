@@ -8,7 +8,7 @@ export default function useHoverSound(soundUrl, volume = 0.5) {
     audioRef.current = new Audio(soundUrl);
     audioRef.current.volume = volume;
   }
-
+  console.log('useHoverSound triggered');
   const playSound = () => {
     const audio = audioRef.current;
     if (!audio) return;
